@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Map - SG Metro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav-container"></div>
+
+<main>
+  <section class="hero" style="padding:48px 0 60px;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Network Overview</span>
+        <h1>Complete metro map</h1>
+        <p>All five lines and 42 stations across Ahmedabad. Zoom, pan, and explore the network.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Placeholder -->
+  <section class="section wrap">
+    <div class="panel" style="padding:26px;overflow-x:auto;">
+      <svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:800px;height:auto;background:linear-gradient(135deg, #0a101c 0%, #16233d 100%);">
+        <defs>
+          <style>
+            .line-red { stroke: #e0616e; }
+            .line-blue { stroke: #5e9bd6; }
+            .line-amber { stroke: #f0ad4e; }
+            .line-teal { stroke: #5fd0c4; }
+            .line-violet { stroke: #b18cd9; }
+            .station-circle { fill: #3fb6f2; stroke: #7fd6ff; stroke-width: 2; }
+            .interchange { fill: #f0ad4e; }
+            .text-label { font-family: 'Inter', sans-serif; font-size: 11px; fill: #d8dee9; text-anchor: middle; }
+            .text-line { font-family: 'Space Grotesk', sans-serif; font-size: 9px; fill: #a9bcd6; font-weight: 600; }
+          </style>
+        </defs>
+
+        <!-- Title -->
+        <text x="500" y="30" class="text-label" style="font-size:20px;font-weight:700;">SG METRO NETWORK MAP</text>
+        <text x="500" y="50" class="text-label" style="font-size:10px;opacity:0.6;">5 Lines • 42 Stations • 24/7 Operations</text>
+
+        <!-- RED LINE (North-South) -->
+        <line x1="400" y1="150" x2="400" y2="650" class="line-red" stroke-width="8" opacity="0.85"/>
+        <circle cx="400" cy="150" r="10" class="station-circle"/><text x="430" y="155" class="text-label">Thaltej Gam</text>
+        <circle cx="400" cy="250" r="10" class="station-circle"/><text x="450" y="255" class="text-label">Shyamal Cross Road</text>
+        <circle cx="400" cy="350" r="10" class="station-circle"/><text x="450" y="355" class="text-label">Ghatlodia</text>
+        <circle cx="400" cy="450" r="10" class="station-circle"/><text x="450" y="455" class="text-label">Central Station</text>
+        <circle cx="400" cy="550" r="10" class="station-circle"/><text x="450" y="555" class="text-label">Nehru Bridge</text>
+        <circle cx="400" cy="650" r="10" class="station-circle"/><text x="440" y="655" class="text-label">Vastral Gam</text>
+        <text x="320" y="400" class="text-line">RED</text>
+
+        <!-- BLUE LINE (East-West) -->
+        <line x1="150" y1="400" x2="750" y2="400" class="line-blue" stroke-width="8" opacity="0.85"/>
+        <circle cx="150" cy="400" r="10" class="station-circle"/><text x="150" y="425" class="text-label">Gyaspur Depot</text>
+        <circle cx="300" cy="400" r="10" class="station-circle"/><text x="300" y="425" class="text-label">Railway Stn</text>
+        <circle cx="400" cy="400" r="10" class="interchange"/><text x="400" y="425" class="text-label">Central</text>
+        <circle cx="550" cy="400" r="10" class="station-circle"/><text x="550" y="425" class="text-label">Kankaria</text>
+        <circle cx="750" cy="400" r="10" class="station-circle"/><text x="750" y="425" class="text-label">Motera Stadium</text>
+        <text x="450" y="380" class="text-line">BLUE</text>
+
+        <!-- TEAL LINE (Airport Express) -->
+        <line x1="600" y1="100" x2="700" y2="600" class="line-teal" stroke-width="8" opacity="0.85"/>
+        <circle cx="600" cy="100" r="10" class="station-circle"/><text x="650" y="105" class="text-label">SG Airport</text>
+        <circle cx="630" cy="250" r="10" class="station-circle"/><text x="690" y="255" class="text-label">Terminal-2</text>
+        <circle cx="660" cy="400" r="10" class="station-circle"/><text x="720" y="405" class="text-label">Downtown Hub</text>
+        <circle cx="700" cy="600" r="10" class="station-circle"/><text x="760" y="605" class="text-label">Metro Gate</text>
+        <text x="550" y="350" class="text-line">TEAL</text>
+
+        <!-- AMBER LINE -->
+        <line x1="250" y1="200" x2="550" y2="550" class="line-amber" stroke-width="8" opacity="0.85"/>
+        <circle cx="250" cy="200" r="10" class="station-circle"/><text x="200" y="190" class="text-label">North Plaza</text>
+        <circle cx="350" cy="300" r="10" class="station-circle"/><text x="310" y="300" class="text-label">Tech Park</text>
+        <circle cx="450" cy="400" r="10" class="station-circle"/><text x="480" y="380" class="text-label">Med College</text>
+        <circle cx="550" cy="550" r="10" class="station-circle"/><text x="590" y="555" class="text-label">South Campus</text>
+        <text x="320" y="250" class="text-line">AMBER</text>
+
+        <!-- VIOLET LINE (Cultural Loop) -->
+        <ellipse cx="480" cy="500" rx="150" ry="100" fill="none" class="line-violet" stroke-width="8" opacity="0.85"/>
+        <circle cx="480" cy="400" r="10" class="station-circle"/><text x="480" y="375" class="text-label">Heritage Museum</text>
+        <circle cx="600" cy="480" r="10" class="station-circle"/><text x="650" y="485" class="text-label">Art Gallery</text>
+        <circle cx="480" cy="600" r="10" class="station-circle"/><text x="480" y="625" class="text-label">Temple Complex</text>
+        <circle cx="360" cy="480" r="10" class="station-circle"/><text x="300" y="485" class="text-label">Historical Park</text>
+        <text x="480" y="540" class="text-line">VIOLET</text>
+
+        <!-- Legend -->
+        <g transform="translate(50, 700)">
+          <text x="0" y="0" class="text-label" style="text-anchor:start;font-weight:700;">Legend:</text>
+          <line x1="0" y1="15" x2="20" y2="15" class="line-red" stroke-width="4"/><text x="28" y="18" class="text-label" style="text-anchor:start;font-size:10px;">Red: North-South</text>
+          <line x1="180" y1="15" x2="200" y2="15" class="line-blue" stroke-width="4"/><text x="208" y="18" class="text-label" style="text-anchor:start;font-size:10px;">Blue: East-West</text>
+          <line x1="360" y1="15" x2="380" y2="15" class="line-teal" stroke-width="4"/><text x="388" y="18" class="text-label" style="text-anchor:start;font-size:10px;">Teal: Airport</text>
+          <circle cx="540" cy="15" r="6" class="interchange"/><text x="558" y="18" class="text-label" style="text-anchor:start;font-size:10px;">Interchange Station</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Line Details -->
+  <section class="section wrap">
+    <div class="section-head">
+      <span class="eyebrow">Line Information</span>
+      <h2>Details for each route</h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel" style="padding:28px;border-left:4px solid #e0616e;">
+        <h3 style="color:#e0616e;margin-bottom:12px;">Red Line</h3>
+        <div style="font-size:0.9rem;color:var(--frost-dim);display:grid;gap:8px;">
+          <div><strong>Route:</strong> Thaltej Gam ↔ Vastral Gam</div>
+          <div><strong>Stations:</strong> 12</div>
+          <div><strong>Duration:</strong> 40 minutes</div>
+          <div><strong>Frequency:</strong> 4 minutes</div>
+          <div><strong>Capacity:</strong> 65,000 passengers/day</div>
+        </div>
+      </div>
+
+      <div class="panel" style="padding:28px;border-left:4px solid #5e9bd6;">
+        <h3 style="color:#5e9bd6;margin-bottom:12px;">Blue Line</h3>
+        <div style="font-size:0.9rem;color:var(--frost-dim);display:grid;gap:8px;">
+          <div><strong>Route:</strong> Gyaspur Depot ↔ Motera Stadium</div>
+          <div><strong>Stations:</strong> 9</div>
+          <div><strong>Duration:</strong> 28 minutes</div>
+          <div><strong>Frequency:</strong> 5 minutes</div>
+          <div><strong>Capacity:</strong> 52,000 passengers/day</div>
+        </div>
+      </div>
+
+      <div class="panel" style="padding:28px;border-left:4px solid #5fd0c4;">
+        <h3 style="color:#5fd0c4;margin-bottom:12px;">Teal Line (Airport Express)</h3>
+        <div style="font-size:0.9rem;color:var(--frost-dim);display:grid;gap:8px;">
+          <div><strong>Route:</strong> Downtown ↔ SG Airport</div>
+          <div><strong>Stations:</strong> 7</div>
+          <div><strong>Duration:</strong> 35 minutes</div>
+          <div><strong>Frequency:</strong> 3 minutes</div>
+          <div><strong>Note:</strong> Premium service with reserved seating</div>
+        </div>
+      </div>
+
+      <div class="panel" style="padding:28px;border-left:4px solid #f0ad4e;">
+        <h3 style="color:#f0ad4e;margin-bottom:12px;">Amber Line</h3>
+        <div style="font-size:0.9rem;color:var(--frost-dim);display:grid;gap:8px;">
+          <div><strong>Route:</strong> North Plaza ↔ South Campus</div>
+          <div><strong>Stations:</strong> 8</div>
+          <div><strong>Duration:</strong> 24 minutes</div>
+          <div><strong>Frequency:</strong> 6 minutes</div>
+          <div><strong>Focus:</strong> Educational & residential hubs</div>
+        </div>
+      </div>
+
+      <div class="panel" style="padding:28px;border-left:4px solid #b18cd9;grid-column:1/-1;">
+        <h3 style="color:#b18cd9;margin-bottom:12px;">Violet Line (Cultural Heritage Loop)</h3>
+        <div style="font-size:0.9rem;color:var(--frost-dim);display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+          <div><strong>Route:</strong> Heritage Museum → Temple Complex → Historical Park → Art Gallery</div>
+          <div><strong>Stations:</strong> 6 interchange points with green spaces</div>
+          <div><strong>Duration:</strong> 18 minutes (complete loop)</div>
+          <div><strong>Feature:</strong> UNESCO heritage site connections</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plan Trip CTA -->
+  <section class="section wrap">
+    <div style="background:linear-gradient(135deg,rgba(63,182,242,0.08),rgba(177,140,217,0.05));padding:48px;border:1px solid var(--hairline);border-radius:var(--radius-lg);text-align:center;">
+      <h2 style="margin-bottom:14px;">Ready to explore?</h2>
+      <p style="color:var(--frost-dim);margin-bottom:24px;">Use our interactive trip planner to find the fastest route between any two stations.</p>
+      <a href="route.html" class="btn btn-primary">Plan your trip</a>
+    </div>
+  </section>
+</main>
+
+<div id="footer-container"></div>
+
+<script src="js/nav.js" defer></script>
+<script src="js/footer.js" defer></script>
+</body>
+</html>

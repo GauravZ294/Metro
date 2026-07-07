@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report an Issue or Suggestion - SG Metro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav-container"></div>
+
+<main>
+  <section class="hero" style="padding:48px 0 60px;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Help Us Improve</span>
+        <h1>Report issues or suggest improvements</h1>
+        <p>Your input shapes the future of SG Metro. Submit reports, ideas, and feedback securely and anonymously if preferred.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="form-panel">
+      <h2 style="margin-bottom:8px;">Submit a Report or Suggestion</h2>
+      <p style="margin-bottom:24px;color:var(--frost-dim);">All submissions are tracked and reviewed. You'll receive a ticket number for follow-up.</p>
+
+      <form id="reportForm" class="form-grid">
+        <!-- Report Type Selection -->
+        <div style="grid-column:1/-1;">
+          <label style="margin-bottom:12px;">Report Type *</label>
+          <div class="radio-group">
+            <label class="radio-chip" style="flex:1;">
+              <input type="radio" name="reportType" value="safety" required>
+              <span>🚨 Safety Issue</span>
+            </label>
+            <label class="radio-chip" style="flex:1;">
+              <input type="radio" name="reportType" value="accessibility">
+              <span>♿ Accessibility</span>
+            </label>
+            <label class="radio-chip" style="flex:1;">
+              <input type="radio" name="reportType" value="facility">
+              <span>🏢 Facility Issue</span>
+            </label>
+            <label class="radio-chip" style="flex:1;">
+              <input type="radio" name="reportType" value="service">
+              <span>🚆 Service Problem</span>
+            </label>
+            <label class="radio-chip" style="flex:1;">
+              <input type="radio" name="reportType" value="suggestion">
+              <span>💡 Suggestion</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Personal Info -->
+        <div style="grid-column:1/-1;">
+          <h3 style="margin:18px 0 12px;">Your Information</h3>
+        </div>
+
+        <div style="grid-column:1/-1;">
+          <label style="display:flex;align-items:center;gap:8px;font-weight:400;cursor:pointer;">
+            <input type="checkbox" id="anonymous" name="anonymous" style="width:18px;height:18px;">
+            <span>Submit anonymously (recommended for safety concerns)</span>
+          </label>
+        </div>
+
+        <div id="identityFields">
+          <div>
+            <label for="reportName">Name *</label>
+            <input type="text" id="reportName" name="name" required placeholder="Your full name">
+          </div>
+
+          <div>
+            <label for="reportEmail">Email *</label>
+            <input type="email" id="reportEmail" name="email" required placeholder="your@email.com">
+          </div>
+        </div>
+
+        <div style="grid-column:1/-1;">
+          <label for="phone2">Phone (optional)</label>
+          <input type="tel" id="phone2" name="phone" placeholder="+91 98765 43210">
+        </div>
+
+        <!-- Report Details -->
+        <div style="grid-column:1/-1;">
+          <h3 style="margin:18px 0 12px;">Report Details</h3>
+        </div>
+
+        <div style="grid-column:1/-1;">
+          <label for="station2">Station / Location *</label>
+          <input type="text" id="station2" name="station" required placeholder="Which station or line?">
+        </div>
+
+        <div>
+          <label for="date">Date & Time (if applicable)</label>
+          <input type="datetime-local" id="date" name="incidentDate">
+        </div>
+
+        <div>
+          <label for="severity">Severity Level</label>
+          <select id="severity" name="severity">
+            <option value="">Select severity</option>
+            <option value="critical">Critical / Safety Risk</option>
+            <option value="high">High / Significant Impact</option>
+            <option value="medium">Medium / Minor Impact</option>
+            <option value="low">Low / Suggestion Only</option>
+          </select>
+        </div>
+
+        <div style="grid-column:1/-1;">
+          <label for="description">Description *</label>
+          <textarea id="description" name="description" required placeholder="Please provide detailed information about your report or suggestion..." style="min-height:180px;"></textarea>
+          <div class="hint-text">Be specific: What happened? When? Who was involved? What was the impact?</div>
+        </div>
+
+        <!-- Attachments -->
+        <div style="grid-column:1/-1;">
+          <label for="attachment">Attach evidence (optional)</label>
+          <input type="file" id="attachment" name="attachment" accept="image/*,.pdf" style="padding:10px;border:1px dashed var(--hairline-strong);border-radius:14px;">
+          <div class="hint-text">Images, videos, or PDFs only. Max 10 MB.</div>
+        </div>
+
+        <!-- Visibility Preference -->
+        <div style="grid-column:1/-1;">
+          <h3 style="margin:18px 0 12px;">Privacy & Follow-up</h3>
+        </div>
+
+        <div style="grid-column:1/-1;">
+          <label style="display:flex;align-items:center;gap:8px;font-weight:400;cursor:pointer;">
+            <input type="checkbox" id="updates" name="wantUpdates" style="width:18px;height:18px;">
+            <span>I want to receive updates on this report via email</span>
+          </label>
+        </div>
+
+        <div style="grid-column:1/-1;">
+          <label style="display:flex;align-items:center;gap:8px;font-weight:400;cursor:pointer;">
+            <input type="checkbox" id="publicShare" name="publicShare" style="width:18px;height:18px;">
+            <span>I allow this report to be shared publicly (without my identity) to help improve SG Metro</span>
+          </label>
+        </div>
+
+        <!-- T&C -->
+        <div style="grid-column:1/-1;">
+          <label style="display:flex;align-items:flex-start;gap:8px;font-weight:400;cursor:pointer;">
+            <input type="checkbox" id="agree" name="agree" required style="width:18px;height:18px;margin-top:2px;flex-shrink:0;">
+            <span style="font-size:0.9rem;">I confirm that the information provided is accurate and understand that false reports may result in legal action *</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit Report</button>
+        <div id="reportMsg" class="form-msg"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ for Reports -->
+  <section class="section wrap">
+    <div class="section-head">
+      <span class="eyebrow">Frequently Asked</span>
+      <h2>About reporting</h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel" style="padding:26px;">
+        <h3 style="margin-bottom:12px;font-size:1.05rem;">How long does it take to receive a ticket number?</h3>
+        <p style="color:var(--frost-dim);font-size:0.9rem;line-height:1.6;">Immediately upon submission. You'll receive a confirmation email with your ticket ID within 2 minutes.</p>
+      </div>
+
+      <div class="panel" style="padding:26px;">
+        <h3 style="margin-bottom:12px;font-size:1.05rem;">Are all reports investigated?</h3>
+        <p style="color:var(--frost-dim);font-size:0.9rem;line-height:1.6;">Yes. Safety issues and complaints are prioritized. Suggestions are reviewed monthly by our planning team.</p>
+      </div>
+
+      <div class="panel" style="padding:26px;">
+        <h3 style="margin-bottom:12px;font-size:1.05rem;">Can I remain anonymous?</h3>
+        <p style="color:var(--frost-dim);font-size:0.9rem;line-height:1.6;">Yes. Check the "Anonymous" option and we won't collect personal information. You'll still get a ticket number for follow-up.</p>
+      </div>
+
+      <div class="panel" style="padding:26px;">
+        <h3 style="margin-bottom:12px;font-size:1.05rem;">What about safety issues?</h3>
+        <p style="color:var(--frost-dim);font-size:0.9rem;line-height:1.6;">Critical safety reports are escalated immediately. If life-threatening, call 100 (emergency) or visit the nearest help desk.</p>
+      </div>
+
+      <div class="panel" style="padding:26px;">
+        <h3 style="margin-bottom:12px;font-size:1.05rem;">How do I track my report?</h3>
+        <p style="color:var(--frost-dim);font-size:0.9rem;line-height:1.6;">Use your ticket number at any help desk or call our support line. Status updates are sent via email if opted in.</p>
+      </div>
+
+      <div class="panel" style="padding:26px;">
+        <h3 style="margin-bottom:12px;font-size:1.05rem;">Can I edit my report after submission?</h3>
+        <p style="color:var(--frost-dim);font-size:0.9rem;line-height:1.6;">Within 24 hours, yes. Contact support with your ticket number. After that, you can file a follow-up report.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Links -->
+  <section class="section wrap">
+    <div style="background:linear-gradient(135deg,rgba(224,97,110,0.08),rgba(177,140,217,0.05));padding:48px;border:1px solid var(--hairline);border-radius:var(--radius-lg);">
+      <div style="text-align:center;max-width:600px;margin:0 auto;">
+        <h2 style="margin-bottom:14px;">Need immediate help?</h2>
+        <p style="color:var(--frost-dim);margin-bottom:24px;">For emergencies or urgent safety concerns, please contact authorities or visit the nearest help desk immediately.</p>
+        <a href="feedback.html" class="btn btn-primary">Contact support</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-container"></div>
+
+<script src="js/nav.js" defer></script>
+<script src="js/footer.js" defer></script>
+<script>
+// Handle anonymous checkbox
+document.getElementById('anonymous').addEventListener('change', (e) => {
+  const fields = document.getElementById('identityFields');
+  fields.style.display = e.target.checked ? 'none' : 'grid';
+  document.getElementById('reportName').required = !e.target.checked;
+  document.getElementById('reportEmail').required = !e.target.checked;
+});
+
+// Handle report form submission
+document.getElementById('reportForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData);
+  const msgEl = document.getElementById('reportMsg');
+
+  try {
+    const response = await fetch('/api/report', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      msgEl.classList.remove('err');
+      msgEl.classList.add('ok');
+      msgEl.textContent = `✓ Report submitted! Ticket #${result.ticketId}. Check your email for details.`;
+      e.target.reset();
+      document.getElementById('identityFields').style.display = 'grid';
+    } else {
+      throw new Error('Failed to submit');
+    }
+  } catch (error) {
+    msgEl.classList.remove('ok');
+    msgEl.classList.add('err');
+    msgEl.textContent = '✗ Error submitting report. Please try again or contact support.';
+  }
+});
+</script>
+</body>
+</html>

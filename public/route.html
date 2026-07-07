@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Your Trip - SG Metro Ahmedabad</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div id="nav-container"></div>
+
+  <main>
+    <section class="hero" style="padding:48px 0 60px;">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Interactive Route Planner</span>
+          <h1>Find the best way to get there</h1>
+          <p>Real-time journey planning with live tracking, accessibility info, and fare estimates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="route-hero">
+        <!-- Route Planning Panel -->
+        <div class="route-panel">
+          <h2>Plan Your Journey</h2>
+
+          <div class="form-grid">
+            <div>
+              <label for="origin">Starting Point</label>
+              <input type="text" id="origin" placeholder="Enter station name or address" autocomplete="off">
+              <div class="hint-text">e.g., "Ahmedabad Central" or your current location</div>
+            </div>
+
+            <div>
+              <label for="destination">Destination</label>
+              <input type="text" id="destination" placeholder="Enter station name or address" autocomplete="off">
+              <div class="hint-text">Where do you want to go?</div>
+            </div>
+          </div>
+
+          <div class="route-select">
+            <label for="routeSelect">Select a Metro Line (or auto-route)</label>
+            <select id="routeSelect">
+              <option value="">Find best route automatically</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <div>
+              <label for="departTime">Depart</label>
+              <input type="time" id="departTime">
+            </div>
+            <div>
+              <label for="accessibility">Accessibility</label>
+              <select id="accessibility">
+                <option value="">Not required</option>
+                <option value="wheelchair">Wheelchair access</option>
+                <option value="audio">Audio guidance</option>
+                <option value="both">Both services</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block" id="planBtn" style="margin-top:12px;">Plan journey</button>
+
+          <!-- Route Details Panel -->
+          <div id="routeDetails" class="route-details" style="display:none;margin-top:20px;">
+            <div id="detailsContent"></div>
+          </div>
+
+          <div id="errorMsg" style="color:var(--danger);font-size:0.9rem;margin-top:12px;display:none;"></div>
+        </div>
+
+        <!-- Map Panel -->
+        <div class="map-card">
+          <div id="map"></div>
+          <div id="mapLoading" class="map-loading" hidden>
+            <div class="spinner"></div>
+            <span>Initializing map...</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="section wrap">
+      <div class="grid cards-grid">
+        <div class="card">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+            </svg>
+          </div>
+          <h3>Real-time Updates</h3>
+          <p>Live train positions, delays, and crowding levels update every 15 seconds.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="2" />
+              <path d="M12 3v18" />
+              <path d="M20 9V5a2 2 0 00-2-2h-4l-2-2H8l-2 2H4a2 2 0 00-2 2v4" />
+            </svg>
+          </div>
+          <h3>Multi-line Routing</h3>
+          <p>Find optimal transfers between all five lines with calculated wait times.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12h18M12 3v18M3 6h18M3 18h18" />
+            </svg>
+          </div>
+          <h3>Fare Calculator</h3>
+          <p>Automatic fare estimation based on distance, time of day, and pass type.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Available Routes Info -->
+    <section class="section wrap">
+      <div class="section-head">
+        <span class="eyebrow">Network Lines</span>
+        <h2>All routes available for planning</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="line-chip line-red"><span class="line-dot"></span> Red Line</span>
+          <h4 style="margin-top:12px;">Thaltej Gam → Vastral Gam</h4>
+          <p style="color:var(--frost-faint);font-size:0.85rem;margin:8px 0;">12 stations | 40 min | Peak capacity</p>
+        </div>
+        <div class="card">
+          <span class="line-chip line-blue"><span class="line-dot"></span> Blue Line</span>
+          <h4 style="margin-top:12px;">Gyaspur Depot → Motera Stadium</h4>
+          <p style="color:var(--frost-faint);font-size:0.85rem;margin:8px 0;">9 stations | 28 min | Express service</p>
+        </div>
+        <div class="card">
+          <span class="line-chip line-amber"><span class="line-dot"></span> Amber Line</span>
+          <h4 style="margin-top:12px;">Urban Connector</h4>
+          <p style="color:var(--frost-faint);font-size:0.85rem;margin:8px 0;">8 stations | 24 min | Residential focus
+          </p>
+        </div>
+        <div class="card">
+          <span class="line-chip line-teal"><span class="line-dot"></span> Teal Line</span>
+          <h4 style="margin-top:12px;">Downtown → SG Airport</h4>
+          <p style="color:var(--frost-faint);font-size:0.85rem;margin:8px 0;">7 stations | 35 min | Premium service</p>
+        </div>
+        <div class="card">
+          <span class="line-chip line-violet"><span class="line-dot"></span> Violet Line</span>
+          <h4 style="margin-top:12px;">Cultural Loop</h4>
+          <p style="color:var(--frost-faint);font-size:0.85rem;margin:8px 0;">6 stations | 18 min | Heritage sites</p>
+        </div>
+        <div class="card">
+          <div
+            style="font-family:var(--font-mono);font-size:0.72rem;color:var(--ice-400);letter-spacing:0.08em;margin-bottom:8px;">
+            💡 TIP</div>
+          <h4>Multi-line journeys</h4>
+          <p style="color:var(--frost-faint);font-size:0.85rem;">The planner automatically finds optimal transfers with
+            shortest wait times.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const mapEl = document.getElementById('map');
+      if (!mapEl) return;
+
+      const fallbackFrame = document.createElement('iframe');
+      fallbackFrame.title = 'Metro area map';
+      fallbackFrame.src = 'https://www.openstreetmap.org/export/embed.html?bbox=72.46%2C22.96%2C72.67%2C23.09&layer=mapnik';
+      fallbackFrame.style.width = '100%';
+      fallbackFrame.style.height = '100%';
+      fallbackFrame.style.minHeight = '520px';
+      fallbackFrame.style.border = '0';
+      fallbackFrame.style.borderRadius = 'inherit';
+      fallbackFrame.loading = 'lazy';
+      mapEl.appendChild(fallbackFrame);
+
+      const mapLoading = document.getElementById('mapLoading');
+      if (mapLoading) mapLoading.hidden = true;
+    });
+  </script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/route.js" defer></script>
+</body>
+
+</html>

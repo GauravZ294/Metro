@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SG Metro - Ahmedabad Rail Network | Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description"
+    content="SG Metro — Fast, eco-friendly urban rail transit across Ahmedabad with 5 lines and 42 stations.">
+  <meta name="theme-color" content="#3fb6f2">
+</head>
+
+<body>
+
+  <div id="nav-container"></div>
+
+  <main>
+    <!-- ===== HERO WITH 3D SCENE ===== -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Next-generation urban transit</div>
+          <h1>The <em>fastest way</em> to move around <br>Ahmedabad</h1>
+          <p class="lead">Five modern lines connecting residential, commercial, and cultural hubs. Real-time updates,
+            accessible stations, and a network built for the future.</p>
+
+          <div class="hero-cta">
+            <a href="route.html" class="btn btn-primary">Plan your trip</a>
+            <a href="service.html" class="btn btn-ghost">Learn about fares</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <b>42</b>
+              <span>Stations</span>
+            </div>
+            <div class="stat">
+              <b>5</b>
+              <span>Lines</span>
+            </div>
+            <div class="stat">
+              <b>24M+</b>
+              <span>Riders/year</span>
+            </div>
+            <div class="stat">
+              <b>Zero</b>
+              <span>Emissions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-canvas-wrap">
+          <canvas id="hero3d"></canvas>
+          <div class="canvas-tag">3D Network Preview</div>
+          <div class="hero-canvas-fallback" id="canvasFallback" hidden>
+            <span>3D environment requires WebGL support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICE ALERTS TICKER ===== -->
+    <section class="ticker-bar" id="serviceTickerBar" hidden>
+      <div class="ticker-inner">
+        <span class="ticker-label">Live Updates</span>
+        <div class="ticker-track" id="serviceTickerTrack"></div>
+      </div>
+    </section>
+
+    <!-- ===== QUICK ACTION CARDS ===== -->
+    <section class="section wrap">
+      <div class="grid cards-grid">
+        <div class="card">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path
+                d="M17 10.5V7a1 1 0 00-1-1H5a2 2 0 00-2 2v6c0 1.1.9 2 2 2h6m4 0h2a2 2 0 002-2v-6a1 1 0 00-1-1h-11a2 2 0 00-2 2v6c0 1.1.9 2 2 2h6m4 0l4-4m0 0l-4 4m4-4v8" />
+            </svg>
+          </div>
+          <h3>Real-Time Tracking</h3>
+          <p>Know exactly where your train is and when it arrives. Live updates every 15 seconds.</p>
+          <span class="card-meta">→ Available on all lines</span>
+        </div>
+
+        <div class="card">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+            </svg>
+          </div>
+          <h3>Smart Scheduling</h3>
+          <p>Plan optimal routes with transfer times, crowd levels, and platform info pre-calculated.</p>
+          <span class="card-meta">→ Personalized alerts</span>
+        </div>
+
+        <div class="card">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M3 3h18v18H3z" />
+              <path
+                d="M9 9h2v2H9zm4 0h2v2h-2zm4 0h2v2h-2zM9 13h2v2H9zm4 0h2v2h-2zm4 0h2v2h-2zM9 17h2v2H9zm4 0h2v2h-2zm4 0h2v2h-2z" />
+            </svg>
+          </div>
+          <h3>Accessible Design</h3>
+          <p>Wheelchair access, sensory accommodations, and multilingual support at every station.</p>
+          <span class="card-meta">→ ADA compliant</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DEPARTURE BOARD (Signature Element) ===== -->
+    <section class="section wrap">
+      <div class="section-head">
+        <span class="eyebrow">Live Service Board</span>
+        <h2>Next trains departing</h2>
+        <p>Real-time departure data from major interchange stations across the network.</p>
+      </div>
+
+      <div class="board">
+        <div class="board-head">
+          <h3>Ahmedabad Central Station</h3>
+          <span class="board-clock" id="boardClock">14:32</span>
+        </div>
+        <div class="board-cols">
+          <span>DESTINATION</span>
+          <span>PLATFORM</span>
+          <span>ETA</span>
+          <span>STATUS</span>
+        </div>
+        <div id="boardRows"></div>
+      </div>
+    </section>
+
+    <!-- ===== NETWORK OVERVIEW ===== -->
+    <section class="section wrap">
+      <div class="section-head">
+        <span class="eyebrow">Five Modern Lines</span>
+        <h2>Our growing network</h2>
+      </div>
+
+      <div class="grid cards-grid">
+        <div class="card">
+          <span class="line-chip line-red">
+            <span class="line-dot"></span>
+            Red Line
+          </span>
+          <h3 style="margin-top:12px;">North-South Corridor</h3>
+          <p>12 stations from Thaltej Gam to Vastral Gam. Serves central commercial district.</p>
+          <p style="color:var(--frost-faint);font-size:0.8rem;margin-top:12px;">Duration: 40 min • Frequency: 4 min</p>
+        </div>
+
+        <div class="card">
+          <span class="line-chip line-blue">
+            <span class="line-dot"></span>
+            Blue Line
+          </span>
+          <h3 style="margin-top:12px;">East-West Express</h3>
+          <p>9 stations linking Gyaspur Depot to Motera Stadium. Peak capacity 65,000 pax/day.</p>
+          <p style="color:var(--frost-faint);font-size:0.8rem;margin-top:12px;">Duration: 28 min • Frequency: 5 min</p>
+        </div>
+
+        <div class="card">
+          <span class="line-chip line-amber">
+            <span class="line-dot"></span>
+            Amber Line
+          </span>
+          <h3 style="margin-top:12px;">Urban Connector</h3>
+          <p>8 stations serving residential neighborhoods and educational institutions.</p>
+          <p style="color:var(--frost-faint);font-size:0.8rem;margin-top:12px;">Duration: 24 min • Frequency: 6 min</p>
+        </div>
+
+        <div class="card">
+          <span class="line-chip line-teal">
+            <span class="line-dot"></span>
+            Teal Line
+          </span>
+          <h3 style="margin-top:12px;">Airport Express</h3>
+          <p>7 stations connecting downtown to Sardar Vallabhbhai Patel International Airport.</p>
+          <p style="color:var(--frost-faint);font-size:0.8rem;margin-top:12px;">Duration: 35 min • Frequency: 3 min</p>
+        </div>
+
+        <div class="card">
+          <span class="line-chip line-violet">
+            <span class="line-dot"></span>
+            Violet Line
+          </span>
+          <h3 style="margin-top:12px;">Cultural Loop</h3>
+          <p>6 stations serving museums, heritage sites, and cultural venues in South Ahmedabad.</p>
+          <p style="color:var(--frost-faint);font-size:0.8rem;margin-top:12px;">Duration: 18 min • Frequency: 7 min</p>
+        </div>
+
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            style="width:32px;height:32px;color:var(--ice-400);margin-bottom:12px;">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3.5 2" />
+            <path d="M7 12h10" />
+          </svg>
+          <h3>Future Expansion</h3>
+          <p>Pink and Gold lines under planning. 6 additional stations and 18 km of track by 2028.</p>
+          <p style="color:var(--frost-faint);font-size:0.8rem;margin-top:12px;">→ Public consultation open</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES SECTION ===== -->
+    <section class="section wrap">
+      <div class="media-band">
+        <video autoplay muted loop playsinline>
+          <source src="img/delhi-metro-cinematic.mp4" type="video/mp4">
+        </video>
+        <div class="media-copy">
+          <h3>Built for 30+ million daily commutes</h3>
+          <p>Modern driverless trains, AI-optimized scheduling, and real-time crowd management.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="section wrap">
+      <div class="split"
+        style="background:linear-gradient(135deg,rgba(63,182,242,0.08),rgba(177,140,217,0.05));padding:48px;border:1px solid var(--hairline);border-radius:var(--radius-lg);">
+        <div>
+          <h2 style="margin-bottom:14px;">Plan your commute today</h2>
+          <p style="color:var(--frost-dim);margin-bottom:24px;max-width:50ch;line-height:1.7;">Enter your origin and
+            destination to get door-to-door journey times, fare estimates, and accessibility details.</p>
+          <a href="route.html" class="btn btn-primary">Open trip planner</a>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;text-align:center;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:2.8rem;color:var(--ice-300);margin-bottom:8px;">24/7
+            </div>
+            <div style="color:var(--frost-dim);font-size:0.9rem;letter-spacing:0.03em;">Network operations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/hero-3d.js" defer></script>
+  <script src="js/home.js" defer></script>
+</body>
+
+</html>

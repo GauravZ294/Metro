@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - SG Metro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav-container"></div>
+
+<main>
+  <section class="hero" style="padding:48px 0 60px;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Get in Touch</span>
+        <h1>We're here to help</h1>
+        <p>Questions, feedback, or need assistance? Reach out through any of our channels.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info & Form -->
+  <section class="section wrap">
+    <div class="route-hero" style="align-items:stretch;">
+      <!-- Contact Info -->
+      <div class="route-panel" style="padding:32px;">
+        <h2 style="margin-bottom:24px;">Contact Information</h2>
+
+        <div class="info-strip" style="margin-bottom:18px;">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:+919876543210" style="color:var(--ice-300);text-decoration:none;">+91 98765 43210</a></p>
+            <p style="font-size:0.82rem;color:var(--frost-faint);">Available 24/7 for emergencies</p>
+          </div>
+        </div>
+
+        <div class="info-strip" style="margin-bottom:18px;">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:hello@sgmetro.local" style="color:var(--ice-300);text-decoration:none;">hello@sgmetro.local</a></p>
+            <p style="font-size:0.82rem;color:var(--frost-faint);">Response within 2 business hours</p>
+          </div>
+        </div>
+
+        <div class="info-strip" style="margin-bottom:18px;">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Headquarters</h4>
+            <p>SG Metro Corporate Office<br>Plot 123, Tech Park Avenue<br>Ahmedabad, Gujarat 380001</p>
+          </div>
+        </div>
+
+        <div class="info-strip">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8c0-1-1-2-2-2m-4 0c-1 0-2 1-2 2m2-2v4m4-4v4m2 4h-8a2 2 0 00-2 2v6h12v-6a2 2 0 00-2-2z"/><path d="M8 18h.01M12 18h.01M16 18h.01"/></svg>
+          </div>
+          <div>
+            <h4>Station Help Desks</h4>
+            <p>Available at all 42 metro stations<br>Operating hours: 5 AM – 11 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback Form -->
+      <div class="form-panel">
+        <h2 style="margin-bottom:8px;">Send us feedback</h2>
+        <p style="margin-bottom:24px;">Help us improve the service by sharing your experience.</p>
+
+        <form id="feedbackForm" class="form-grid">
+          <div>
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+          </div>
+
+          <div>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
+          </div>
+
+          <div>
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+          </div>
+
+          <div>
+            <label for="category">Feedback Type *</label>
+            <select id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option value="suggestion">Suggestion</option>
+              <option value="complaint">Complaint</option>
+              <option value="compliment">Compliment</option>
+              <option value="accessibility">Accessibility Issue</option>
+              <option value="safety">Safety Concern</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="station">Station / Location</label>
+            <input type="text" id="station" name="station" placeholder="e.g., Central Station">
+          </div>
+
+          <div style="grid-column:1/-1;">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Tell us what's on your mind..." style="min-height:160px;"></textarea>
+          </div>
+
+          <div style="grid-column:1/-1;">
+            <label style="display:flex;align-items:center;gap:8px;font-weight:400;cursor:pointer;">
+              <input type="checkbox" id="followUp" name="followUp" style="width:18px;height:18px;">
+              <span>I'd like SG Metro to follow up on this feedback</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Send Feedback</button>
+          <div id="feedbackMsg" class="form-msg" style="grid-column:1/-1;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Categories -->
+  <section class="section wrap">
+    <div class="section-head">
+      <span class="eyebrow">How We Can Help</span>
+      <h2>Find the right support channel</h2>
+    </div>
+
+    <div class="grid cards-grid">
+      <div class="card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18.364 5.636l-3.536 3.536m9.172-9.172l-3.536 3.536M9 11a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </div>
+        <h3>Lost & Found</h3>
+        <p>Report lost items or check if something's been turned in at our lost and found service.</p>
+        <a href="mailto:lost@sgmetro.local" style="color:var(--ice-300);text-decoration:none;font-size:0.85rem;">lost@sgmetro.local →</a>
+      </div>
+
+      <div class="card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2.5"/></svg>
+        </div>
+        <h3>Complaints & Issues</h3>
+        <p>Report service issues, safety concerns, or accessibility problems for immediate attention.</p>
+        <a href="mailto:complaints@sgmetro.local" style="color:var(--ice-300);text-decoration:none;font-size:0.85rem;">complaints@sgmetro.local →</a>
+      </div>
+
+      <div class="card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        </div>
+        <h3>FAQs & Ticketing</h3>
+        <p>Answers to common questions about fares, passes, and how to use our transit system.</p>
+        <a href="mailto:support@sgmetro.local" style="color:var(--ice-300);text-decoration:none;font-size:0.85rem;">support@sgmetro.local →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Hours -->
+  <section class="section wrap">
+    <div class="grid-2">
+      <div class="panel" style="padding:28px;">
+        <h3 style="margin-bottom:14px;">Customer Service Hours</h3>
+        <div style="font-size:0.9rem;color:var(--frost-dim);display:grid;gap:10px;">
+          <div><strong style="color:var(--frost);">Phone Support:</strong><br>24 hours, 7 days a week</div>
+          <div><strong style="color:var(--frost);">Email Support:</strong><br>Response within 2 business hours</div>
+          <div><strong style="color:var(--frost);">Station Help Desks:</strong><br>5:00 AM – 11:00 PM</div>
+        </div>
+      </div>
+
+      <div class="panel" style="padding:28px;">
+        <h3 style="margin-bottom:14px;">Average Response Times</h3>
+        <div style="font-size:0.9rem;color:var(--frost-dim);display:grid;gap:10px;">
+          <div><strong style="color:var(--ok);">Emergency:</strong> &lt; 5 minutes</div>
+          <div><strong style="color:var(--ok);">Urgent:</strong> &lt; 30 minutes</div>
+          <div><strong style="color:var(--ok);">General:</strong> &lt; 2 hours</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-container"></div>
+
+<script src="js/nav.js" defer></script>
+<script src="js/footer.js" defer></script>
+<script>
+// Handle feedback form submission
+document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData);
+  const msgEl = document.getElementById('feedbackMsg');
+
+  try {
+    const response = await fetch('/api/feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      msgEl.classList.remove('err');
+      msgEl.classList.add('ok');
+      msgEl.textContent = '✓ Thank you! Your feedback has been sent.';
+      e.target.reset();
+    } else {
+      throw new Error('Failed to submit');
+    }
+  } catch (error) {
+    msgEl.classList.remove('ok');
+    msgEl.classList.add('err');
+    msgEl.textContent = '✗ Error sending feedback. Please try again.';
+  }
+});
+</script>
+</body>
+</html>
