@@ -1656,4 +1656,53 @@ textarea {
   .stat-strip .stat b {
     font-size: 1.5rem;
   }
+}/* --- Video Background --- */
+body {
+  background: transparent !important;
+}
+
+.video-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  overflow: hidden;
+  background-color: var(--glacier-950);
+}
+
+.video-bg-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.video-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(1100px 620px at 12% -10%, rgba(63, 182, 242, 0.15), transparent 60%),
+              radial-gradient(900px 500px at 100% 0%, rgba(177, 140, 217, 0.10), transparent 55%),
+              linear-gradient(180deg, rgba(4, 6, 10, 0.7) 0%, rgba(6, 10, 18, 0.8) 40%, rgba(10, 16, 28, 0.9) 100%);
+  pointer-events: none;
+}
+
+/* Form layout fixes for Plan Your Journey */
+.route-panel label {
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+.route-panel .hint-text {
+  margin-top: 6px !important;
+  display: block !important;
+  line-height: 1.4 !important;
+  word-wrap: break-word !important;
+}
+.route-panel input::placeholder {
+  text-overflow: ellipsis;
 }

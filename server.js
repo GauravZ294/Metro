@@ -119,7 +119,7 @@ const serviceStatus = {
 app.use(helmet());
 app.use(cors());
 app.use(express.json({ limit: '10kb' }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
 
 app.get('/api/config', (req, res) => {
   res.json({

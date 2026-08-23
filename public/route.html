@@ -4,11 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plan Your Trip - SG Metro Ahmedabad</title>
+  <title>SG Metro | Plan Your Trip</title>
+  <meta name="description" content="Plan your trip with the Ahmedabad Metro Route Planner. Find real-time timings, fares, and optimal routes for your journey across the SG Metro network.">
+  <meta name="keywords" content="Metro Route planner, Ahmedabad metro route, Ahmedabad metro map, metro timings, trip planner, SG Metro route">
   <link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://www.sgmetro.com/route">
+  <link rel="icon" type="image/jpeg" href="/img/favicon.jpg">
 </head>
 
 <body>
+<div class="video-bg-container">
+  <video autoplay muted loop playsinline>
+    <source src="/img/strides-services-background-video-dark.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="video-bg-overlay"></div>
 
   <div id="nav-container"></div>
 
@@ -32,14 +42,14 @@
           <div class="form-grid">
             <div>
               <label for="origin">Starting Point</label>
-              <input type="text" id="origin" placeholder="Enter station name or address" autocomplete="off">
-              <div class="hint-text">e.g., "Ahmedabad Central" or your current location</div>
+              <input type="text" id="origin" placeholder="Starting station or address" autocomplete="off">
+              <div class="hint-text">e.g., Ahmedabad Central or current location</div>
             </div>
 
             <div>
               <label for="destination">Destination</label>
-              <input type="text" id="destination" placeholder="Enter station name or address" autocomplete="off">
-              <div class="hint-text">Where do you want to go?</div>
+              <input type="text" id="destination" placeholder="Destination station or address" autocomplete="off">
+              <div class="hint-text">e.g., Motera Stadium</div>
             </div>
           </div>
 

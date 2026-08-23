@@ -9,10 +9,10 @@ async function loadNavBar() {
     document.getElementById('nav-container').innerHTML = navHTML;
 
     // Set active link based on current page
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname;
     document.querySelectorAll('.nav-links a').forEach(link => {
       const href = link.getAttribute('href');
-      if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      if (href === currentPath || (currentPath === '/' && href === '/') || (currentPath === '/index.html' && href === '/')) {
         link.classList.add('active');
       }
     });
