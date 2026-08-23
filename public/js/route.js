@@ -14,7 +14,7 @@ function showMapFallback() {
   mapEl.innerHTML = `
     <iframe
       title="Metro area map"
-      src="https://www.openstreetmap.org/export/embed.html?bbox=72.46%2C22.96%2C72.67%2C23.09&layer=mapnik"
+      src="https://www.google.com/maps?q=Ahmedabad,+Gujarat&output=embed"
       style="width:100%;height:100%;min-height:520px;border:0;border-radius:inherit;"
       loading="lazy"
       referrerpolicy="strict-origin-when-cross-origin"

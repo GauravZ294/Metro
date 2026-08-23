@@ -1706,3 +1706,34 @@ body {
 .route-panel input::placeholder {
   text-overflow: ellipsis;
 }
+
+@media (max-width: 768px) {
+  .media-band {
+    min-height: 250px !important;
+    aspect-ratio: 16/9 !important;
+  }
+}
+
+/* File Input Styling for Dark UI */
+input[type="file"] {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--frost);
+  border: 1px dashed var(--hairline-strong);
+  padding: 10px;
+  border-radius: 14px;
+  width: 100%;
+}
+input[type="file"]::file-selector-button {
+  background: var(--ice-400);
+  color: var(--void);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-right: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+input[type="file"]::file-selector-button:hover {
+  background: var(--ice-300);
+}
