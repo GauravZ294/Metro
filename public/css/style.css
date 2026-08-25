@@ -1704,8 +1704,11 @@ textarea {
 
 @media (max-width: 768px) {
   .media-band {
-    min-height: 250px !important;
-    aspect-ratio: 16/9 !important;
+    min-height: 380px !important;
+    aspect-ratio: auto !important;
+  }
+  .media-band .media-copy {
+    padding: 24px;
   }
 }
 
