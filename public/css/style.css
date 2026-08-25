@@ -557,11 +557,11 @@ button {
    SECTIONS / CARDS
    ========================================================================= */
 .section {
-  padding: 80px 0;
+  padding: 48px 0;
 }
 
 .section-tight {
-  padding: 48px 0;
+  padding: 32px 0;
 }
 
 .section-head {
@@ -609,15 +609,15 @@ button {
   gap: 22px;
 }
 
-.grid-3 {
+.grid-3 { display: grid; gap: 22px; 
   grid-template-columns: repeat(3, 1fr);
 }
 
-.grid-4 {
+.grid-4 { display: grid; gap: 22px; 
   grid-template-columns: repeat(4, 1fr);
 }
 
-.grid-2 {
+.grid-2 { display: grid; gap: 22px; 
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -964,7 +964,7 @@ textarea {
 .hint-text {
   color: var(--frost-faint);
   font-size: 0.82rem;
-  margin-top: -8px;
+  margin-top: 6px;
 }
 
 .map-card {
@@ -1564,7 +1564,7 @@ textarea {
 
   .grid-3,
   .grid-4,
-  .grid-2 {
+  .grid-2 { display: grid; gap: 22px; 
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1635,17 +1635,14 @@ textarea {
 
   .grid-3,
   .grid-4,
-  .grid-2 {
+  .grid-2 { display: grid; gap: 22px; 
     grid-template-columns: 1fr;
   }
 
   .hero {
     padding: 40px 0 60px;
   }
-
-  .section {
-    padding: 56px 0;
-  }
+  .section { padding: 32px 0; }
 
   .stat-strip {
     grid-template-columns: 1fr 1fr;
@@ -1657,9 +1654,7 @@ textarea {
     font-size: 1.5rem;
   }
 }/* --- Video Background --- */
-body {
-  background: transparent !important;
-}
+
 
 .video-bg-container {
   position: fixed;
@@ -1737,3 +1732,34 @@ input[type="file"]::file-selector-button {
 input[type="file"]::file-selector-button:hover {
   background: var(--ice-300);
 }
+
+/* Dark theme form fixes */
+:root {
+  color-scheme: dark;
+}
+
+option {
+  background: var(--glacier-900) !important;
+  color: var(--frost) !important;
+}
+
+/* Ensure all inputs take dark mode correctly */
+input, select, textarea, button {
+  color-scheme: dark;
+}
+
+/* Animated Gradient Background */
+body {
+  background: linear-gradient(-45deg, var(--glacier-950), var(--glacier-800), var(--void), var(--glacier-700));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Remove old transparent body override */

@@ -5,33 +5,9 @@
 let map, routePolyline, routeMarkers = [], routes = [];
 const API_BASE = window.location.origin;
 
-function showMapFallback() {
-  const mapEl = document.getElementById('map');
-  const mapLoading = document.getElementById('mapLoading');
 
-  if (!mapEl) return;
 
-  mapEl.innerHTML = `
-    <iframe
-      title="Metro area map"
-      src="https://www.google.com/maps?q=Ahmedabad,+Gujarat&output=embed"
-      style="width:100%;height:100%;min-height:520px;border:0;border-radius:inherit;"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-    ></iframe>
-  `;
 
-  if (mapLoading) mapLoading.hidden = true;
-}
-
-function ensureMapReady() {
-  if (window.initGoogleMap) {
-    window.initGoogleMap();
-    return;
-  }
-
-  setTimeout(ensureMapReady, 100);
-}
 
 // Initialize Google Map
 window.initGoogleMap = function () {
@@ -234,15 +210,4 @@ function showError(message) {
   document.getElementById('routeDetails').style.display = 'none';
 }
 
-// Fallback if map fails to load
-document.addEventListener('DOMContentLoaded', () => {
-  const mapLoading = document.getElementById('mapLoading');
-  if (mapLoading) {
-    setTimeout(() => {
-      if (!map) {
-        showMapFallback();
-        mapLoading.hidden = false;
-      }
-    }, 3000);
-  }
-});
+
